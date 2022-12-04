@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+		<link rel="icon" href="/images/vinilo.png">
+		<script src="/products.js"></script>
+		<title>Productos</title>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12">
+					<h1 class="text-center">Productos</h1>
+				</div>
+			</div>
+			<div>
+				<input type="text" id="searchTab" placeholder="Buscar Producto">
+			</div>
+
+			<div class="container-fluid">
+				<form action="/api/productos" method="POST" id="addProduct" class="form">
+					<div class="row">
+						<div class="col-12">
+							<h2 class="text-center">Agregar Producto</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<label for="name">Nombre</label>
+							<input type="text" name="name" id="name" class="form-control">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<label for="price">Precio</label>
+							<input type="number" name="price" id="price" class="form-control">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<label for="code">Código</label>
+							<input type="text" name="code" id="code" class="form-control">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<label for="description">Descripción</label>
+							<input type="text" name="description" id="description" class="form-control">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<label for="stock">Stock</label>
+							<input type="text" name="stock" id="stock" class="form-control">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<label for="thumbnail">Imagen</label>
+							<input type="file" name="thumbnail" id="thumbnail" class="form-control">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<button type="submit" class="btn btn-primary">Agregar</button>
+						</div>
+					</div>
+				</form>
+
+			</div>
+
+			<div class="d-grid col-6 mx-auto">
+					<a class="btn" href="/">Home</a>                                   
+			</div> 
+	</body>
+	<style>
+		form, .table, .form, table {
+			margin: 0 auto;
+			width: 50%;
+		}
+		body, .tbody, .form-control {
+			background-color: #b7bcff;
+		}
+		th, td, .text {
+			color: white;
+		}
+		.btn {
+			background-color: #000547;
+			color: #b7bcff;
+			border-color: #b7bcff;
+		}
+		.btn:hover {
+			background-color: #b7bcff;
+			color: #000547;
+			border-color: #000547;
+		}
+		</style>
+</html>

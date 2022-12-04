@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="./images/vinilo.png" >
+    <script src="./cart.js" type="module" defer></script>
+    <title>Carrito</title>
+</head>
+<body>
+    <main>
+        <% if (userData) { %>
+            <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="/"><img src="./images/vinilo.png" alt="logo" width="30" height="24" class="d-inline-block align-text-top"></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <p>Bienvenido <%= userData.username %> </p>
+                        <p style="display:none"><%= userData._id %></p>
+                        <p style="display:none"><%= cart._id %></p>
+                        <a class="nav-link" href="/user">Datos Usuario</a>
+                        <img class="userImage" src="/userImage/<%= userData.image %>" alt="user image">
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/logout">Cerrar sesión</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        <% } %>
+        <% if (!userData) { %>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="/"><img src="./images/vinilo.png" alt="logo" width="30" height="24" class="d-inline-block align-text-top"></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <p>No has iniciado sesión</p>
+                        <a href="/login">Login</a>
+                        <a href="/register">Register</a>
+                    </div>
+                </nav>
+        <% } %>
+        <div class="container-fluid">
+            <h2>Carrito</h2>
+            <table id="cart">
+                <thead>
+                    <tr>
+                        <th scope="col" class="col">Producto</th>
+                        <th scope="col" class="col">Precio</th>
+                        <th scope="col" class="col">Cantidad</th>
+                        <th scope="col" class="col">Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody" id="cartContainer">
+                    <% cart.products.forEach(product => { %>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= product.name %></h5>
+                                <p class="card-text"><%= product.description %></p>
+                                <p class="card-text"><%= product.price %></p>
+                                <p class="card-text"><img scr="<%= product.thumbnail %>"></p>
+                                <button id="<%= product._id %>" name="<%= cart._id %>" class="deleteBtn btn btn-danger">Eliminar</button>
+                            </div>
+                        </div>
+                    <% }) %>
+                </tbody>
+                <tbody>
+                    <% if (cart.products.length > 0) { %>
+                        <form onSubmit="return finalizarCompra()" id="finalizarCompra">
+                            <button type="submit" class="btn btn-primary">Finalizar Compra</button>
+                        </form>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <a href="/">Volver a Home</a>
+        </div>
+    </main>
+    <script>
+        const deleteBtns = document.querySelectorAll(".deleteBtn");
+        deleteBtns.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                const productId = e.target.id;
+                const cartId = e.target.name;
+                deleteProduct(cartId, productId);
+            })
+        })
+    const deleteProduct = (cartId, productId) => {
+    const url = `/api/carrito/${cartId}/productos/${productId}`;
+    fetch(url, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert("Producto eliminado");
+        renderCart();
+        console.log(data);
+    })
+    .catch(err => console.log(err));
+}
+
+const form = document.getElementById("finalizarCompra");
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    finalizarCompra();
+})
+
+const finalizarCompra = () => {
+    console.log("finalizar compra");
+    const url = '/api/carrito/finalizar-compra';
+    fetch(url)
+    .then(res => res.json())
+    .then(data => {
+        alert("Compra realizada");
+        window.location.href = "/";
+        console.log(data);
+    })
+    .catch(err => console.log(err));
+}
+    </script>
+</body>
+<style>
+    form, .table, .form, table {
+        margin: 0 auto;
+        width: 50%;
+    }
+    body, .tbody, .form-control {
+        background-color: #b7bcff;
+    }
+    th, td, .text {
+        color: white;
+    }
+    .btn {
+        background-color: #000547;
+        color: #b7bcff;
+        border-color: #b7bcff;
+    }
+    .btn:hover {
+        background-color: #b7bcff;
+        color: #000547;
+        border-color: #000547;
+    }
+</style>
+</html>

@@ -1,0 +1,45 @@
+{"level":"error","message":"El usuario pp no se ha podido registrar correctamente - POST [11/11/2022, 7:50:15 PM]"}
+{"level":"error","message":"El usuario pp no se ha podido registrar correctamente - POST [11/11/2022, 7:53:38 PM]"}
+{"code":"ERR_HTTP_INVALID_STATUS_CODE","level":"error"}
+{"level":"error","message":"Ruta /loginerror - GET [11/11/2022, 9:49:55 PM]"}
+{"level":"error","message":"Ruta /loginerror - GET [11/11/2022, 10:00:43 PM]"}
+{"level":"error","message":"Ruta /loginerror - GET [11/11/2022, 10:04:11 PM]"}
+{"level":"error","message":"Ruta /loginerror - GET [11/11/2022, 10:04:34 PM]"}
+{"level":"error","message":"Ruta /loginerror - GET [11/11/2022, 10:04:44 PM]"}
+{"code":"ERR_HTTP_INVALID_STATUS_CODE","level":"error"}
+{"level":"error","message":"Ruta /loginerror - GET [11/11/2022, 10:05:41 PM]"}
+{"level":"error","message":"Ruta /loginerror - GET [11/11/2022, 10:11:45 PM]"}
+{"level":"error","message":"El usuario admin no se ha podido registrar correctamente - POST [11/11/2022, 10:12:17 PM]"}
+{"level":"error","message":"El usuario admin no se ha podido registrar correctamente - POST [11/11/2022, 10:13:46 PM]"}
+{"level":"error","message":"Ruta /loginError - GET [11/11/2022, 10:38:52 PM]"}
+{"level":"error","message":"El usuario admin no se ha podido registrar correctamente - POST [11/11/2022, 10:39:47 PM]"}
+{"level":"error","message":"Ruta /loginError - GET [11/11/2022, 10:48:04 PM]"}
+{"level":"error","message":"Ruta /loginError - GET [11/11/2022, 11:28:55 PM]"}
+{"level":"error","message":"Ruta /loginError - GET [11/11/2022, 11:30:47 PM]"}
+{"level":"error","message":"Ruta /loginError - GET [11/11/2022, 11:30:52 PM]"}
+{"level":"error","message":"El usuario pp no se ha podido registrar correctamente - POST [11/11/2022, 11:32:04 PM]"}
+{"level":"error","message":"Ruta /loginError - GET [11/11/2022, 11:32:46 PM]"}
+{"level":"error","message":"Ruta /loginError - GET [11/12/2022, 1:02:37 AM]"}
+{"level":"error","message":"Ruta /loginError - GET [11/12/2022, 1:03:04 AM]"}
+{"level":"error","message":"Ruta /loginError - GET [11/12/2022, 1:06:40 AM]"}
+{"level":"error","message":"Ruta /loginError - GET [11/12/2022, 12:51:30 PM]"}
+{"level":"error","message":"Ruta /loginError - GET [11/12/2022, 1:04:19 PM]"}
+{"level":"error","message":"Ruta /loginError - GET [11/12/2022, 1:04:31 PM]"}
+{"level":"error","message":"Ruta /loginError - GET [11/12/2022, 1:10:50 PM]"}
+{"level":"error","message":"Ruta /loginError - GET [11/12/2022, 1:15:26 PM]"}
+{"level":"error","message":"Ruta /loginError - GET [11/12/2022, 1:17:57 PM]"}
+{"level":"error","message":"Ruta /loginError - GET [11/12/2022, 1:19:56 PM]"}
+{"level":"error","message":"Ruta /loginError - GET [11/12/2022, 2:21:23 PM]"}
+{"level":"error","message":"Ruta /loginError - GET [11/12/2022, 2:25:22 PM]"}
+{"level":"error","message":"Ruta /loginError - GET [11/12/2022, 2:33:38 PM]"}
+{"level":"error","message":"Ruta /loginError - GET [11/12/2022, 2:34:08 PM]"}
+{"level":"error","message":"Ruta /loginError - GET [11/12/2022, 2:46:28 PM]"}
+{"level":"error","message":"Ruta /loginError - GET [11/12/2022, 3:06:11 PM]"}
+{"code":"ERR_HTTP_INVALID_STATUS_CODE","level":"error"}
+{"level":"error","message":"Ruta /loginError - GET [11/13/2022, 3:53:05 PM]"}
+{"code":"ERR_HTTP_INVALID_STATUS_CODE","level":"error"}
+{"code":"ERR_HTTP_INVALID_STATUS_CODE","level":"error"}
+{"code":"ERR_HTTP_INVALID_STATUS_CODE","level":"error"}
+{"code":"ERR_HTTP_INVALID_STATUS_CODE","level":"error"}
+{"level":"error","message":"Ruta /loginError - GET [11/14/2022, 3:31:59 PM]"}
+{"level":"error","message":"El usuario hola no tiene permisos para acceder a la ruta - GET [11/14/2022, 3:34:01 PM]"}

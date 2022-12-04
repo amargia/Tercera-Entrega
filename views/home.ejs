@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+		<link rel="icon" type="image/png" href="/images/vinilo.png">	
+		<script src="./main.js" type="module" defer></script>	
+		<title>Home</title>
+	</head>
+
+	<body>
+
+		<main>
+			<% if (userData) { %>	
+				<nav class="navbar">
+					<div class="container-fluid">
+							<h1 class="text">Bienvenido <%= userData.name %></h1>						
+							<p style="display:none" id="userId"><%= userData._id %></p>						
+							<p style="display:none" id="cartId"><%= cart._id %></p>
+							<a href="/user">Datos de Usuario</a>							
+						<img class="userImage" src="/userImages/<%= userData.avatar %>" alt="user image">		
+						<a href="/api/carrito" id="cartContainer"><img class="carrito" src="/images/cart.png" alt="cart">
+							<div id="counter"></div>
+						</a>				
+					</div>
+				</nav>
+			<% } %>
+			<% if (!userData) { %>
+				<div class="container-fluid">
+						<h1 class="text">No estas logueado</h1>
+						<a href="/login">Login</a>                  
+				</div>
+			<% } %>	
+			<div class="container-fluid">	
+				<h2 class="text">Productos</h2>
+				<div class="row">
+					<div class="col-12">
+						<input type="text" id="searchTab" placeholder="Buscar producto">					
+					</div>
+				</div>
+				<div id="productsContainer"></div>
+			</div>
+			<% if (userData.username == "admin") { %>				
+				<div class="container-fluid">
+					<a href="/api/productos" id="products">Admin Panel</a>                                   
+				</div> 
+			<% } %>
+		</main>                                      
+	</body>
+<style>
+	form, .table, .form, table {
+		margin: 0 auto;
+		width: 50%;
+	}
+	body, .tbody, .form-control {
+		background-color: #b7bcff;
+	}
+	a {
+		text-decoration: none;
+		color: white;
+	}
+    a:hover {
+	color: #000547;
+    }
+	th, td, .text {
+		color: white;
+	}
+	.btn {
+		background-color: #000547;
+		color: #b7bcff;
+		border-color: #b7bcff;
+	}
+	.btn:hover {
+		background-color: #b7bcff;
+		color: #000547;
+		border-color: #000547;
+	}
+	.carrito {
+		width: 50px;
+		height: 50px;
+		float: right;
+	}
+</style>
+</html>
